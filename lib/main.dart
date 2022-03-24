@@ -10,6 +10,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'AICTE App',
       theme: ThemeData(
         primarySwatch: Colors.orange,
@@ -54,11 +55,6 @@ class SecondScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title:new Image.asset('assets/images/aicte_logo.png',width:50,height:50),
-      centerTitle: true,),
-      body: Center(
-          child:Text("Home page",textScaleFactor: 2,)
-      ),
       drawer: Drawer(
         // Add a ListView to the drawer. This ensures the user can scroll
         // through the options in the drawer if there isn't enough vertical
@@ -94,6 +90,30 @@ class SecondScreen extends StatelessWidget {
           ],
         ),
       ),
-    );
+      appBar: AppBar(
+        title:new Image.asset('assets/images/aicte_logo.png',width:50,height:50),
+      centerTitle: true,
+        actions: <Widget>[
+          IconButton(
+            onPressed: (){},
+            icon: Icon(
+              Icons.account_circle_outlined, color: Colors.black54,
+            )
+          )
+        ],
+      ),
+      body: Center(
+          child:Text("Home page",textScaleFactor: 2,)
+      ),
+    bottomNavigationBar: BottomNavigationBar(
+    type: BottomNavigationBarType.fixed,
+    items: <BottomNavigationBarItem>[
+    BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+    BottomNavigationBarItem(icon: Icon(Icons.announcement_outlined), label: 'opportunity'),
+    BottomNavigationBarItem(icon: Icon(Icons.article_outlined), label: 'News'),
+    ],
+
+
+    ));
   }
 }
