@@ -1,3 +1,5 @@
+import 'package:aicte/chat.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
 
@@ -45,7 +47,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       backgroundColor: Colors.indigo,
       body: Center(
-          child:new Image.asset('assets/images/aicte_logo.png',width:300,height:100)
+          child:new Image.asset('assets/images/aicte_logo.png',width:350,height:150)
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
@@ -70,7 +72,7 @@ class SecondScreen extends StatelessWidget {
               child: Text('AICTE'),
             ),
             ListTile(
-              title: const Text('Faculty'),
+              title: const Text('Initiatives'),
               onTap: () {
                 // Update the state of the app
                 // ...
@@ -79,7 +81,61 @@ class SecondScreen extends StatelessWidget {
               },
             ),
             ListTile(
-              title: const Text('Student'),
+              title: const Text('Schemes'),
+              onTap: () {
+                // Update the state of the app
+                // ...
+                // Then close the drawer
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              title: const Text('Education'),
+              onTap: () {
+                // Update the state of the app
+                // ...
+                // Then close the drawer
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              title: const Text('Statistics'),
+              onTap: () {
+                // Update the state of the app
+                // ...
+                // Then close the drawer
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              title: const Text('Bulletin'),
+              onTap: () {
+                // Update the state of the app
+                // ...
+                // Then close the drawer
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              title: const Text('Terms of use'),
+              onTap: () {
+                // Update the state of the app
+                // ...
+                // Then close the drawer
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              title: const Text('Privacy Policy'),
+              onTap: () {
+                // Update the state of the app
+                // ...
+                // Then close the drawer
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              title: const Text('About AICTE'),
               onTap: () {
                 // Update the state of the app
                 // ...
@@ -103,8 +159,21 @@ class SecondScreen extends StatelessWidget {
         ],
       ),
       body: Center(
-          child:Text("Home page",textScaleFactor: 2,)
+          child:Column(
+            children: <Widget>[
+
+            ],
+          )
       ),
+    floatingActionButton: FloatingActionButton(
+        backgroundColor:Colors.blueAccent,
+        tooltip: 'Chat',
+        elevation: 14,
+        splashColor: Colors.orange,
+        onPressed: ()=>{
+          Navigator.push(context,MaterialPageRoute(builder: (context)=>ChatPage()))
+        },
+        child:Icon(Icons.chat_outlined,)),
     bottomNavigationBar: BottomNavigationBar(
     type: BottomNavigationBarType.fixed,
     items: <BottomNavigationBarItem>[
